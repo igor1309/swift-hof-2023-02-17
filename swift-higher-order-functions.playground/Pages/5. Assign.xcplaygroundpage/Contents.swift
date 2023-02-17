@@ -1,7 +1,7 @@
 import Combine
 import Foundation
 
-final class FileEditor {
+final class FileEditor: ObservableObject {
     
     @Published private(set) var title: String = ""
     
