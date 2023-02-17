@@ -31,6 +31,8 @@ asStrings
 // short ("point free")
 [1, 2, 3]
     .map(String.init)
+    .sorted(by: <)
+    .sorted(by: { $0 < $1 })
 
 let strings = ["1", "one", "2", "two", "3", "three"]
 

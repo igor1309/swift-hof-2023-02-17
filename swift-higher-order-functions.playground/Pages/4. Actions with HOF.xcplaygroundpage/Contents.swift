@@ -20,18 +20,35 @@ final class FileEditor {
         
         action
             .compactMap { $0 as? FileAction.Open }
+            .handleEvents(
+                receiveSubscription: <#T##((Subscription) -> Void)?##((Subscription) -> Void)?##(Subscription) -> Void#>,
+                receiveOutput: <#T##((FileAction.Open) -> Void)?##((FileAction.Open) -> Void)?##(FileAction.Open) -> Void#>,
+                receiveCompletion: <#T##((Subscribers.Completion<Never>) -> Void)?##((Subscribers.Completion<Never>) -> Void)?##(Subscribers.Completion<Never>) -> Void#>,
+                receiveCancel: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>,
+                receiveRequest: <#T##((Subscribers.Demand) -> Void)?##((Subscribers.Demand) -> Void)?##(Subscribers.Demand) -> Void#>)
             .map(\.file)
-            .filter { $0.ext == "txt" }
+            .print(<#T##prefix: String##String#>, to: <#T##TextOutputStream?#>)
+            .filter { $0.ext == "asdasdfg" }
             .receive(on: DispatchQueue.main)
             .sink { print("Opened file named", "\"\($0.name)\"") }
             .store(in: &cancellables)
         
-#warning("uncomment to see `Close` action")
-//        action
-//            .compactMap { $0 as? FileAction.Close }
+//       let openTxtFiles = action
+//            .compactMap { $0 as? FileAction.Open }
+//            .map(\.file)
+//            .filter { $0.ext == "txt" }
+//
+//        openTxtFiles
 //            .receive(on: DispatchQueue.main)
-//            .sink { _ in print("Closed file") }
+//            .sink { print("Opened file named", "\"\($0.name)\"") }
 //            .store(in: &cancellables)
+        
+#warning("uncomment to see `Close` action")
+        action
+            .compactMap { $0 as? FileAction.Close }
+            .receive(on: DispatchQueue.main)
+            .sink { _ in print("Closed file") }
+            .store(in: &cancellables)
     }
 }
 
