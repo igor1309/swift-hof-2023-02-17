@@ -11,7 +11,9 @@ f() -> (A) -> B
 (Array, ArraySlice, Range, CloseRange, String, Dictionary, Set,...)
 
 Transforming a Sequence
+
     (A) -> B | ([A]) -> [B]
+
 - map
 - compactMap
 - flatMap
@@ -40,7 +42,7 @@ Excluding Elements
 ## Result
 - map
 - flatMap
-- mapError()
+- mapError
 - flatMapError
 
 # References
