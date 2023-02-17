@@ -28,7 +28,7 @@ public struct File {
         self.ext = ext
     }
 
-    static func textFile(named name: String) -> Self {
+    public static func textFile(named name: String) -> Self {
         
         .init(name: name, ext: "txt")
     }
