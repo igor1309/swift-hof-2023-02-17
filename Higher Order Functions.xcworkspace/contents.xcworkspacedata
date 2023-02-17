@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:Higher Order Functions.md">
+   </FileRef>
+   <FileRef
+      location = "container:swift-higher-order-functions.playground">
+   </FileRef>
+</Workspace>
