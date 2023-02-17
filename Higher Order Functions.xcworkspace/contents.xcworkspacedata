@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Higher Order Functions.md">
+      location = "group:/Users/igormalyarov/Desktop/Higher Order Functions 2023-02-17 Fora iOS/README.md">
    </FileRef>
    <FileRef
       location = "container:swift-higher-order-functions.playground">
