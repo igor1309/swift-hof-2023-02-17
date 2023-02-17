@@ -1,14 +1,3 @@
-public struct File {
-    
-    public let name: String
-    public let ext: String
-    
-    public init(name: String, ext: String) {
-        self.name = name
-        self.ext = ext
-    }
-}
-
 public enum FileAction {
     
     public struct Open: Action {
@@ -29,8 +18,16 @@ public enum FileAction {
     }
 }
 
-public extension FileAction.Open.File {
+public struct File {
     
+    public let name: String
+    public let ext: String
+    
+    public init(name: String, ext: String) {
+        self.name = name
+        self.ext = ext
+    }
+
     static func textFile(named name: String) -> Self {
         
         .init(name: name, ext: "txt")
