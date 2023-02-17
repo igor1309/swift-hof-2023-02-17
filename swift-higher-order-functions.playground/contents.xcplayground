@@ -3,10 +3,11 @@
     <pages>
         <page name='0. map, compactMap'/>
         <page name='1. Chaining'/>
-        <page name='2. compactMap Combine'/>
+        <page name='2. Combine'/>
         <page name='3. Actions as is'/>
         <page name='4. Actions with HOF'/>
         <page name='5. Assign'/>
         <page name='tryMap'/>
+        <page name='6. From ProductCarouselView'/>
     </pages>
 </playground>
