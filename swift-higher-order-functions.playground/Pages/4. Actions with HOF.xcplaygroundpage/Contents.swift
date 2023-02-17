@@ -22,7 +22,9 @@ final class FileEditor {
             .compactMap { $0 as? FileAction.Open }
             .handleEvents(
                 receiveSubscription: <#T##((Subscription) -> Void)?##((Subscription) -> Void)?##(Subscription) -> Void#>,
-                receiveOutput: <#T##((FileAction.Open) -> Void)?##((FileAction.Open) -> Void)?##(FileAction.Open) -> Void#>,
+                receiveOutput: { value in
+                    LoggerAgent.shared.log(.debug, .ui, "sdfsdf \(value.file.name).\(value.file.ext)")
+                },
                 receiveCompletion: <#T##((Subscribers.Completion<Never>) -> Void)?##((Subscribers.Completion<Never>) -> Void)?##(Subscribers.Completion<Never>) -> Void#>,
                 receiveCancel: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>,
                 receiveRequest: <#T##((Subscribers.Demand) -> Void)?##((Subscribers.Demand) -> Void)?##(Subscribers.Demand) -> Void#>)
